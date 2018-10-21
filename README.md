@@ -12,7 +12,12 @@ modeling the rubik's cube with opengl
 2. add all introduced method to make this cube look cool
 
 # the goal to achieve
-> rubik's cube may seem very difficult,however how to simplify this huge question is also so important.
+> rubik's cube may seem very difficult,however how to simplify this huge question is so important.
 
 1. can I make a 2X2 cube first and then try to achieve the 3X3 model
 2. can I make the 3X3 cube flat with six square
+
+# technique
+1. based on glut
+2. compile method
+g++ main.cpp -framework opengl -framework GLUT -Wno-deprecated-declarations
