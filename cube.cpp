@@ -1,6 +1,5 @@
-#include<opengl/gl.h>
-#include<opengl/glu.h>
 #include"cube.h"
+#include<opengl/glu.h>
 
 Cube::Cube()
 {}
@@ -16,5 +15,28 @@ void Cube::initializeGL()
 void Cube::resizeGL(int width,int height)
 {}
 
-void paintGL()
+void Cube::paintGL()
 {}
+
+//global varible
+Cube c;
+
+
+//called to draw sence
+void RenderSence(void)
+{
+	c.paintGL();
+}
+
+//set up the rendering state
+void SetupRC(void)
+{
+	c.initializeGL();
+}
+
+//called by GLUT library when the window has change size
+void ChangeSize(GLsizei w,GLsizei h)
+{
+	c.resizeGL(w,h);
+}
+
