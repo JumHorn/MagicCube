@@ -4,6 +4,7 @@
 #include <boost/bind.hpp>
 #include <boost/function.hpp>
 #include "cube.h"
+extern Cube c;
 
 int main(int argc, char *argv[])
 {
@@ -19,6 +20,7 @@ int main(int argc, char *argv[])
 	glutDisplayFunc(RenderSence);
 	//glutReshapeFunc(resizeGL);
 	
+	c.initializeGL();	
 	// enter GLUT event processing cycle
 	glutMainLoop();
 	
