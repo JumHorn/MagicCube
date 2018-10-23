@@ -11,8 +11,8 @@ int main(int argc, char *argv[])
 	glutInit(&argc, argv);
 	//center the window
 	glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-	glutInitWindowPosition((glutGet(GLUT_SCREEN_WIDTH)-640)/2,(glutGet(GLUT_SCREEN_HEIGHT)-480)/2);
-	glutInitWindowSize(640,480);
+	glutInitWindowPosition((glutGet(GLUT_SCREEN_WIDTH)-800)/2,(glutGet(GLUT_SCREEN_HEIGHT)-600)/2);
+	glutInitWindowSize(800,600);
 	glutCreateWindow("Magic Cube");
 	
 	// register callbacks
