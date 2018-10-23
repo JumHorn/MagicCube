@@ -1,5 +1,5 @@
 #include"cube.h"
-#include<opengl/glu.h>
+#include"GLUT/glut.h"
 
 Cube::Cube()
 {}
@@ -28,7 +28,21 @@ void Cube::resizeGL(int width,int height)
 
 void Cube::paintGL()
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+	// Clear Color and Depth Buffers
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+	// Reset transformations
+	glLoadIdentity();
+	// Set the camera
+	gluLookAt(	0.0f, 0.0f, 10.0f,
+			0.0f, 0.0f,  0.0f,
+			0.0f, 1.0f,  0.0f);
+	glBegin(GL_TRIANGLES);
+		glVertex3f(-2.0f,-2.0f, 0.0f);
+		glVertex3f( 2.0f, 0.0f, 0.0);
+		glVertex3f( 0.0f, 2.0f, 0.0);
+	glEnd();
+	glutSwapBuffers();
 }
 
 //global varible
