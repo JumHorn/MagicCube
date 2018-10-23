@@ -4,7 +4,6 @@
 #include <boost/bind.hpp>
 #include <boost/function.hpp>
 #include "cube.h"
-extern Cube c;
 
 int main(int argc, char *argv[])
 {
@@ -17,10 +16,10 @@ int main(int argc, char *argv[])
 	glutCreateWindow("Magic Cube");
 	
 	// register callbacks
+	SetupRC();
 	glutDisplayFunc(RenderSence);
-	//glutReshapeFunc(resizeGL);
+	glutReshapeFunc(ChangeSize);
 	
-	c.initializeGL();	
 	// enter GLUT event processing cycle
 	glutMainLoop();
 	
