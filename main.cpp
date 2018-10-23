@@ -19,6 +19,8 @@ int main(int argc, char *argv[])
 	SetupRC();
 	glutDisplayFunc(RenderSence);
 	glutReshapeFunc(ChangeSize);
+	//glutTimerFunc(unsigned int msecs,void (*func)(int value), value));
+
 	// enter GLUT event processing cycle
 	glutMainLoop();
 	
