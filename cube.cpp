@@ -31,16 +31,46 @@ void Cube::paintGL()
 	// Clear Color and Depth Buffers
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	// Reset transformations
+	glTranslatef(0.0f,0.0f,-50.0f);
 	glLoadIdentity();
-	// Set the camera
-	gluLookAt(	0.0f, 0.0f, 10.0f,
-			0.0f, 0.0f,  0.0f,
-			0.0f, 1.0f,  0.0f);
-	glBegin(GL_TRIANGLES);
-		glVertex3f(-2.0f,-2.0f, 0.0f);
-		glVertex3f( 2.0f, 0.0f, 0.0);
-		glVertex3f( 0.0f, 2.0f, 0.0);
+
+	glBegin(GL_QUADS);
+		//near
+		glColor3f(1.0f,0.0f,0.0f);
+		glVertex3f( 1.0f, 1.0f, 1.0f);
+		glVertex3f( -1.0f, 1.0f, 1.0f);
+		glVertex3f( -1.0f, -1.0f, 1.0f);
+		glVertex3f( 1.0f, -1.0f, 1.0f);
+		//far
+		glColor3f(0.0f,1.0f,0.0f);
+		glVertex3f( 1.0f, 1.0f, -1.0f);
+		glVertex3f( 1.0f, -1.0f, -1.0f);
+		glVertex3f( -1.0f, -1.0f, -1.0f);
+		glVertex3f( -1.0f, 1.0f, -1.0f);
+		//top
+		glColor3f(0.0f,0.0f,1.0f);
+		glVertex3f( 1.0f, 1.0f, -1.0f);
+		glVertex3f( -1.0f, 1.0f, -1.0f);
+		glVertex3f( -1.0f, 1.0f, 1.0f);
+		glVertex3f( 1.0f, 1.0f, 1.0f);
+		//down
+		glColor3f(1.0f,1.0f,0.0f);
+		glVertex3f( 1.0f, -1.0f, 1.0f);
+		glVertex3f( -1.0f, -1.0f, 1.0f);
+		glVertex3f( -1.0f, -1.0f, -1.0f);
+		glVertex3f( 1.0f, -1.0f, -1.0f);
+		//left
+		glColor3f(1.0f,0.0f,1.0f);
+		glVertex3f( -1.0f, 1.0f, 1.0f);
+		glVertex3f( -1.0f, 1.0f, -1.0f);
+		glVertex3f( -1.0f, -1.0f, -1.0f);
+		glVertex3f( -1.0f, -1.0f, 1.0f);
+		//right
+		glColor3f(0.0f,1.0f,1.0f);
+		glVertex3f( 1.0f, 1.0f, 1.0f);
+		glVertex3f( 1.0f, -1.0f, 1.0f);
+		glVertex3f( 1.0f, -1.0f, -1.0f);
+		glVertex3f( 1.0f, 1.0f, -1.0f);
 	glEnd();
 	glutSwapBuffers();
 }
