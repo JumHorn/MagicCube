@@ -1,7 +1,7 @@
 #include"cube.h"
 #include"GLUT/glut.h"
 
-Cube::Cube()
+Cube::Cube():rotate(0.0f)
 {}
 
 Cube::~Cube()
@@ -36,6 +36,7 @@ void Cube::paintGL()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 	glTranslatef(0.0f,0.0f,-5.0f);
+	glRotatef(rotate,1.0f,1.0f,1.0f);
 
 	glBegin(GL_QUADS);
 		//near
@@ -78,6 +79,12 @@ void Cube::paintGL()
 	glutSwapBuffers();
 }
 
+void Cube::timerEvent()
+{
+	rotate+=0.5;
+	paintGL();
+}
+
 //global varible
 Cube c;
 
@@ -100,3 +107,8 @@ void ChangeSize(GLsizei w,GLsizei h)
 	c.resizeGL(w,h);
 }
 
+void timerFun(int value)
+{
+	c.timerEvent();
+	glutTimerFunc(50,timerFun,0);
+}

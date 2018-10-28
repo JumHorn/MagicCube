@@ -17,6 +17,9 @@ public:
 	void keyPressEvent();
 	void mouseMoveEvent();
 	void timerEvent();
+
+private:
+	GLfloat rotate;
 };
 
 extern "C"
@@ -27,6 +30,8 @@ extern "C"
 	void SetupRC(void);
 	//called by GLUT library when the window has change size
 	void ChangeSize(GLsizei w,GLsizei h);
+	//timer callback function
+	void timerFun(int value);
 }
 
 #endif
