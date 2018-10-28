@@ -17,9 +17,9 @@ void Cube::resizeGL(int width,int height)
 {
 	if(height==0)
 		height=1;
+	glViewport(0,0,width,height);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glViewport(0,0,width,height);
 	gluPerspective(45.0f,(GLfloat)width/(GLfloat)height,0.1f,100.0f);
 
 	glMatrixMode(GL_MODELVIEW);
@@ -31,7 +31,7 @@ void Cube::paintGL()
 	// Clear Color and Depth Buffers
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	glTranslatef(0.0f,0.0f,-50.0f);
+	glTranslatef(0.0f,0.0f,-80.0f);
 	glLoadIdentity();
 
 	glBegin(GL_QUADS);
