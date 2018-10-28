@@ -30,9 +30,8 @@ void Cube::paintGL()
 {
 	// Clear Color and Depth Buffers
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-	glTranslatef(0.0f,0.0f,-80.0f);
 	glLoadIdentity();
+	glTranslatef(0.0f,0.0f,-5.0f);
 
 	glBegin(GL_QUADS);
 		//near
