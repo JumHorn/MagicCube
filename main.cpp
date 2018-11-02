@@ -17,9 +17,14 @@ int main(int argc, char *argv[])
 	
 	// register callbacks
 	SetupRC();
+	//paintGL
 	glutDisplayFunc(RenderSence);
+	//resizeGL
 	glutReshapeFunc(ChangeSize);
+	//timer function
 	glutTimerFunc(50,timerFun,0);
+	//mouse function
+	glutMotionFunc(mouseMove);
 
 	// enter GLUT event processing cycle
 	glutMainLoop();

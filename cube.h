@@ -19,7 +19,9 @@ public:
 	void timerEvent();
 
 private:
-	GLfloat rotate;
+	GLfloat xrotate;
+	GLfloat yrotate;
+	GLfloat zrotate;
 };
 
 extern "C"
@@ -32,6 +34,8 @@ extern "C"
 	void ChangeSize(GLsizei w,GLsizei h);
 	//timer callback function
 	void timerFun(int value);
+	//mouse move event
+	void mouseMove(int x,int y);
 }
 
 #endif

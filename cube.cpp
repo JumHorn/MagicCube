@@ -1,7 +1,7 @@
 #include"cube.h"
 #include"GLUT/glut.h"
 
-Cube::Cube():rotate(0.0f)
+Cube::Cube():xrotate(0.0f),yrotate(0.0f),zrotate(0.0f)
 {}
 
 Cube::~Cube()
@@ -36,7 +36,9 @@ void Cube::paintGL()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 	glTranslatef(0.0f,0.0f,-5.0f);
-	glRotatef(rotate,1.0f,1.0f,1.0f);
+	glRotatef(xrotate,1.0f,0.0f,0.0f);
+	glRotatef(yrotate,0.0f,1.0f,0.0f);
+	glRotatef(zrotate,0.0f,0.0f,1.0f);
 
 	glBegin(GL_QUADS);
 		//near
@@ -81,9 +83,14 @@ void Cube::paintGL()
 
 void Cube::timerEvent()
 {
-	rotate+=0.5;
+	xrotate+=0.5;
+	yrotate+=0.5;
+	zrotate+=0.5;
 	paintGL();
 }
+
+void Cube::mouseMoveEvent()
+{}
 
 //global varible
 Cube c;
@@ -111,4 +118,9 @@ void timerFun(int value)
 {
 	c.timerEvent();
 	glutTimerFunc(50,timerFun,0);
+}
+
+void mouseMove(int x,int y)
+{
+	c.mouseMoveEvent();
 }

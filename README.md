@@ -9,7 +9,7 @@ modeling the rubik's cube with opengl
 
 # how to improve
 1. learning from opengl superbible.
-2. add all introduced method to make this cube look cool
+2. add all introduced methods to make this cube look cool
 
 # the goal to achieve
 > rubik's cube may seem very difficult,however how to simplify this huge question is so important.
