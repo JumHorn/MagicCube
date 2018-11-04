@@ -21,3 +21,7 @@ modeling the rubik's cube with opengl
 1. based on glut
 2. compile method
 g++ main.cpp -framework opengl -framework GLUT -Wno-deprecated-declarations
+
+# others
+1. implement GLUT version
+2. implement QGLWidget version
