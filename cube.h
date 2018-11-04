@@ -15,13 +15,18 @@ public:
 
 public:
 	void keyPressEvent();
-	void mouseMoveEvent();
+	void mouseMoveEvent(int x,int y);
+	void mousePressEvent(int button,int state,int x,int y);
 	void timerEvent();
 
 private:
 	GLfloat xrotate;
 	GLfloat yrotate;
 	GLfloat zrotate;
+
+	int mousestate;
+	int xmouse;
+	int ymouse;
 };
 
 extern "C"
@@ -36,6 +41,8 @@ extern "C"
 	void timerFun(int value);
 	//mouse move event
 	void mouseMove(int x,int y);
+	//mouse press event
+	void mousePress(int button,int state,int x,int y);
 }
 
 #endif

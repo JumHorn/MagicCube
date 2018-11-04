@@ -22,9 +22,10 @@ int main(int argc, char *argv[])
 	//resizeGL
 	glutReshapeFunc(ChangeSize);
 	//timer function
-	glutTimerFunc(50,timerFun,0);
+	//glutTimerFunc(50,timerFun,0);
 	//mouse function
 	glutMotionFunc(mouseMove);
+	glutMouseFunc(mousePress);
 
 	// enter GLUT event processing cycle
 	glutMainLoop();

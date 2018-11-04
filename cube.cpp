@@ -89,8 +89,26 @@ void Cube::timerEvent()
 	paintGL();
 }
 
-void Cube::mouseMoveEvent()
-{}
+void Cube::mouseMoveEvent(int x,int y)
+{
+	if(mousestate!=GLUT_DOWN)
+	{
+		xmouse=x;
+		ymouse=y;
+	}
+	int dx=xmouse-x;
+	int dy=ymouse-y;
+	xrotate+=dx;
+	yrotate+=dy;
+	paintGL();
+}
+
+void Cube::mousePressEvent(int button,int state,int x,int y)
+{
+	xmouse=x;
+	ymouse=y;
+	mousestate=state;
+}
 
 //global varible
 Cube c;
@@ -122,5 +140,10 @@ void timerFun(int value)
 
 void mouseMove(int x,int y)
 {
-	c.mouseMoveEvent();
+	c.mouseMoveEvent(x,y);
+}
+
+void mousePress(int button,int state,int x,int y)
+{
+	c.mousePressEvent(button,state,x,y);
 }
