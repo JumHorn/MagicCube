@@ -98,8 +98,8 @@ void Cube::mouseMoveEvent(int x,int y)
 	}
 	int dx=xmouse-x;
 	int dy=ymouse-y;
-	xrotate+=dx;
-	yrotate+=dy;
+	xrotate+=dy*0.01;
+	yrotate+=dx*0.01;
 	paintGL();
 }
 
