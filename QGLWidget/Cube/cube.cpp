@@ -1,8 +1,9 @@
 #include "cube.h"
 
 Cube::Cube(QWidget *parent)
-	: QGLWidget(parent)
+	: QGLWidget(parent), xrotate(0.0f), yrotate(0.0f), zrotate(0.0f)
 {
+	startTimer(50);
 }
 
 Cube::~Cube()
@@ -12,12 +13,13 @@ Cube::~Cube()
 
 void Cube::initializeGL()
 {
-	//glShadeModel(GL_SMOOTH);
+	glShadeModel(GL_SMOOTH);
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	glColor3f(1.0f, 0.0f, 0.0f);
-	//glClearDepth(1.0f);
-	//glEnable(GL_DEPTH_TEST);
-	//glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+	glClearDepth(1.0f);
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LEQUAL);
+	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 }
 
 void Cube::resizeGL(int width, int height)
@@ -92,6 +94,6 @@ void Cube::timerEvent(QTimerEvent * event)
 	xrotate += 0.5;
 	yrotate += 0.5;
 	zrotate += 0.5;
-	paintGL();
+	updateGL();//QGLWidget window redraw and we can't invoke paintGL to redraw
 	QGLWidget::timerEvent(event);
 }
