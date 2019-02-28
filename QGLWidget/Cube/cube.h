@@ -22,6 +22,8 @@ private:
 	GLfloat xrotate;
 	GLfloat yrotate;
 	GLfloat zrotate;
+
+	GLuint cubes;
 };
 
 #endif // CUBE_H
