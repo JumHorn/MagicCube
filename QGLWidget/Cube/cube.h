@@ -2,7 +2,14 @@
 #define CUBE_H
 
 #include <QGLWidget>
+#ifdef __LINUX__
 #include <GL/glu.h>//must be after QGLWidget
+#endif
+
+#ifdef __APPLE__
+#include <OpenGL/glu.h>
+#endif
+
 
 class Cube : public QGLWidget
 {
