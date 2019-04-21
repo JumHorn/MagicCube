@@ -21,5 +21,6 @@ FILE(GLOB UI_FILES "./*.ui")
 FILE(GLOB QRC_FILES "./*.qrc")
 
 add_executable(MagicCube ${SRC_FILES} ${HEAD_FILES})
+target_link_libraries(MagicCube GL GLU)
 qt5_use_modules(MagicCube Core OpenGL)
 
