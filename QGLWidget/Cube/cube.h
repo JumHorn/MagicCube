@@ -2,7 +2,7 @@
 #define CUBE_H
 
 #include <QGLWidget>
-#ifdef __LINUX__
+#ifdef __linux__
 #include <GL/glu.h>//must be after QGLWidget
 #endif
 
