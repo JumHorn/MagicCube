@@ -11,6 +11,11 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
+if(UNIX AND NOT APPLE)
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -no-pie")
+endif()
+
+
 find_package(Qt5 REQUIRED Core OpenGL)
 find_package(OpenGL REQUIRED)
 
